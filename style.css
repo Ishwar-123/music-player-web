@@ -1,0 +1,211 @@
+/* * selector sets universal margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body with a dark background and white text */
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navbar with a custom background color */
+.navbar {
+    background-color: #13bee0;
+}
+
+/* Navbar brand text color set to white */
+.navbar .navbar-brand {
+    color: white;
+}
+
+/* Search bar styling with margin for spacing */
+.search-bar {
+    margin: 0 20px;
+}
+
+/* Player section fixed at the bottom with styling for positioning */
+.player {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #181818;
+    padding: 10px 20px;
+    padding-right: 50px;
+}
+
+/* Flexbox to align player controls like play, next, previous buttons */
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for play, prev, and next buttons */
+.play-button,
+.prev-button,
+.next-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 15px;
+}
+
+/* Album cover image size */
+.album-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+/* Song information section with vertical layout */
+.song-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styling for song name and artist name with scrolling effect */
+.song-info h5,
+.song-info p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+/* Song name animation for scrolling effect */
+.song-info h5 {
+    top: 0;
+    animation-name: scrollText;
+    margin-left: 50px;
+}
+
+/* Artist name animation for scrolling effect */
+.song-info p {
+    top: 30px;
+    animation-name: scrollText;
+    margin-left: 50px;
+}
+
+/* Keyframes for scrolling text effect */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Progress bar styling */
+.progress-bar {
+    width: 90%;
+    background-color: #333;
+    margin: 0 10px;
+}
+
+/* Progress bar inner part color */
+.progress-bar .progress {
+    background-color: #13bee0;
+}
+
+/* Song list section with scrollable area */
+.song-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    padding: 20px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* Individual song item styling with hover effect */
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #282828;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+/* Hover effect for song items */
+.song-item:hover {
+    background-color: #13bee0a7;
+}
+
+/* Styling for album cover inside song item */
+.song-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/* Close button styling for player */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+}
+
+/* Song title font styling */
+h5 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* Time display for song with space between current and total time */
+.song-time {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Stop button styling, initially hidden */
+.stop-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50%;
+    background-color: transparent;
+    border: 2px solid #13bee0;
+    color: #13bee0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hover effect for stop button */
+.stop-button:hover {
+    background-color: #13bee0;
+    color: white;
+}
+
+/* Styling for search input field when focused */
+.search-bar input:focus {
+    border: 2px solid rgb(22, 217, 26);
+}
